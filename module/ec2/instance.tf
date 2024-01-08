@@ -26,9 +26,9 @@ resource "aws_instance" "example" {
 
     #Remote-exec provisioner commands to run on the instance
     inline = [
-     # "echo 'Hello, World!' > hello.txt",
-      "sudo apt update -y && sudo apt install -y python3-pip && sudo pip3 install --ignore-installed blinker && sudo pip3 install flask",
-      "python3 app.py"
+      "echo 'Hello, World!' > hello.txt",
+     # "sudo apt update -y && sudo apt install -y python3-pip && sudo pip3 install --ignore-installed blinker && sudo pip3 install flask",
+     # "python3 app.py"
     ]
   } 
 }
