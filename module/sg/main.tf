@@ -29,3 +29,29 @@ output "security_group_id" {
   value = aws_security_group.webSg.id
 }
 
+
+#static approach to define each ingress instead of using dynamic
+/* 
+resource "aws_security_group" "example_sg" {
+  name        = var.security_group_name
+  description = "Security Group created by the security_group module"
+
+  # Statically define each ingress rule
+  ingress {
+    from_port   = var.ingress_rules[0].from_port
+    to_port     = var.ingress_rules[0].to_port
+    protocol    = var.ingress_rules[0].protocol
+    cidr_blocks = var.ingress_rules[0].cidr_blocks
+    description = var.ingress_rules[0].description
+  }
+
+  ingress {
+    from_port   = var.ingress_rules[1].from_port
+    to_port     = var.ingress_rules[1].to_port
+    protocol    = var.ingress_rules[1].protocol
+    cidr_blocks = var.ingress_rules[1].cidr_blocks
+    description = var.ingress_rules[1].description
+  } 
+*/
+
+#The dynamic block in Terraform is used to generate multiple nested blocks or elements within a resource, module, or variable definition based on a given expression or set of values
